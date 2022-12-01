@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo.svg"
+      type="image/x-icon"
+    />
+
+    <!--  Styles && Normalize -->
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/c60c05e512.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <h1 class="header__title">To Do</h1>
+        <form action="" class="header__search">
+          <i
+            for="search"
+            class="fa-solid fa-magnifying-glass header__search-icon"
+          ></i>
+          <input
+            class="header__input"
+            id="search-input"
+            maxlength="100"
+            minlength="1"
+            name="search"
+            placeholder="Search by name, date or assignee."
+            type="text"
+          />
+        </form>
+        <h2 class="header__title header__title--secodary">NewLaz</h2>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <section class="main__header">
+          <div class="main__text">
+            <h2 class="main__title">My Tasks</h2>
+            <span class="main__date">Today's Date</span>
+          </div>
+          <select name="handle-tasks" id="handle-tasks" class="main__select">
+            <optgroup label="Sort By">
+              <option class="main__option" selected hidden disabled>ID</option>
+              <option class="main__option" value="_taskId">ID</option>
+              <option class="main__option" value="_taskName">Name</option>
+              <option class="main__option" value="_taskassignee">
+                Assignee
+              </option>
+              <option class="main__option" value="_isCompleted">Status</option>
+              <option class="main__option" value="_taskDateEnd">Date</option>
+              <option class="main__option" value="_taskDateCreated">
+                Created At
+              </option>
+            </optgroup>
+            <optgroup label="Filter by">
+              <option class="main__option" value="Completed">
+                Completed
+              </option>
+              <option class="main__option" value="Pending">Pending</option>
+            </optgroup>
+          </select>
+        </section>
+        <section class="tasks">
+          <form action="" class="tasks__form">
+            <div class="tasks__inputs">
+              <select class="tasks__input" id="select-assignee">
+                <option selected hidden disabled>Choose an Assignee</option>
+                <optgroup label="Assignees">
+                  <option value="Frank">Frank</option>
+                  <option value="Jonh">Jonh</option>
+                  <option value="Alice">Alice</option>
+                  <option value="Mary">Mary</option>
+                </optgroup>
+              </select>
+              <input
+                autocomplete="off"
+                class="tasks__input"
+                id="input-name"
+                maxlength="100"
+                minlength="1"
+                name="name"
+                placeholder="Task's name"
+                title="Less than 100 characters, please."
+                type="text"
+                required
+              />
+              <input
+                type="date"
+                name="created_at"
+                id="input-date"
+                class="tasks__input"
+                placeholder="mm/dd/yyyy"
+                required
+              />
+            </div>
+            <button type="submit" class="tasks__btn" id="btn-add-task">
+              Add
+            </button>
+          </form>
+          <ul class="tasks__list" id="tasks-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <template id="template-task">
+      <li class="tasks__card">
+        <div class="tasks__content">
+          <input
+            type="checkbox"
+            name="task"
+            class="tasks__check"
+            data-card-check
+          />
+          <div class="tasks__details">
+            <p class="tasks__text tasks__name">Hacer curso</p>
+            <p class="tasks__text tasks__assignee">asdadsd</p>
+          </div>
+          <div class="tasks__details">
+            <p class="tasks__text tasks__created_at">11/11/2022</p>
+            <p class="tasks__text tasks__id">11/11/2022</p>
+            <p class="tasks__text tasks__date">11/11/2022</p>
+          </div>
+        </div>
+        <div class="tasks__icons">
+          <i class="fa-solid fa-pen-to-square" data-btn-edit></i>
+          <i class="fa-solid fa-trash" data-btn-delete></i>
+        </div>
+      </li>
+    </template>
+    <script src="./assets/js/main.js" type="module"></script>
+  </body>
+</html>

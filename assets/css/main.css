@@ -1,0 +1,239 @@
+:root {
+  --primary-color: #2564cf;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: min(100% - 3rem, 1000px);
+  margin-inline: auto;
+}
+
+/* || HEADER */
+
+.header {
+  overflow: hidden;
+
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: 16% 1fr 25%;
+  align-items: center;
+  gap: 1em;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.header__title--secodary {
+  text-align: right;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+
+  overflow: hidden;
+  padding-inline: 0.5em;
+
+  border-radius: 0.3em;
+  background-color: var(--white);
+  transition: transform 0.2s ease;
+}
+.header__input {
+  width: 100%;
+  padding: 0.8em;
+
+  font-size: 1.1rem;
+
+  border: none;
+}
+
+.header__search:hover {
+  transform: scale(1.01);
+}
+
+.header__input:focus {
+  outline: none;
+}
+
+/* MAIN */
+.main {
+  padding-bottom: 2em;
+}
+
+.main__header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.main__title {
+  margin-block: 0;
+  font-weight: 500;
+}
+
+.main__date {
+  font-weight: 200;
+}
+
+.main__select {
+  padding-inline: 1em;
+  border: none;
+  border-radius: 0.3em;
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.main__option:scope {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+/* Tasks */
+
+.tasks,
+.tasks__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.tasks__form {
+  display: grid;
+  overflow: hidden;
+
+  box-shadow: 0 0 2px 1px rgb(0 0 0 / 0.1);
+  border-radius: 0.3em;
+}
+
+.tasks__input,
+.tasks__btn {
+  width: 100%;
+
+  border: none;
+  box-shadow: 0 0 2px 1px rgb(0 0 0 / 0.1);
+}
+
+.tasks__input {
+  background-color: var(--white);
+  padding: 1em;
+}
+
+.tasks__input:focus {
+  outline: none;
+}
+
+.tasks__btn {
+  padding-block: 0.8em;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.tasks__btn:disabled {
+  opacity: 0.5;
+}
+
+.tasks__list {
+  padding: 0;
+  margin: 0;
+}
+
+.tasks__card {
+  display: grid;
+  grid-template-columns: 90% 1fr;
+  gap: 1em;
+  padding: 1em;
+
+  font-size: 1.2rem;
+
+  border-radius: 0.3em;
+  box-shadow: 0 0 2px 1px rgb(0 0 0 / 0.1);
+
+  list-style: none;
+}
+
+.tasks__content,
+.tasks__icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tasks__content {
+  gap: 0.5em;
+  width: 100%;
+}
+
+.tasks__text {
+  margin-block: 0;
+}
+
+.tasks__date,
+.tasks__id,
+.tasks__created_at {
+  font-weight: 200;
+}
+
+.task__completed {
+  opacity: 0.5;
+}
+
+.tasks__icons {
+  gap: 1em;
+}
+
+.tasks__details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tasks__assignee {
+  text-align: right;
+}
+
+/* Allows long words to be able to be broken and wrap onto the next line. */
+.tasks__name {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.fa-solid {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.fa-trash,
+.fa-pen-to-square {
+  transition: color 0.2s ease;
+}
+
+.fa-trash:hover {
+  color: #ff0000;
+}
+
+.fa-pen-to-square:hover {
+  color: #74d414;
+}
